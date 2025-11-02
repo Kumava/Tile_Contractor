@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+          }
+          
+          .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+          }
+          
+          .nav-links li a {
+            color: white;
+            text-decoration: none;
+          }
+          
+          .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+          }
+          
+          /* Responsive: hide menu on small screens */
+          @media (max-width: 768px) {
+            .nav-links {
+              display: none;
+              flex-direction: column;
+              background: #444;
+              position: absolute;
+              top: 60px;
+              right: 20px;
+              padding: 10px;
+            }
+          
+            .nav-links.active {
+              display: flex;
+            }
+          
+            .menu-toggle {
+              display: block;
+            }
+          }
+          
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">MySite</div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- hamburger -->
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <script>
+        const toggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+      </script>
+      
+</body>
+</html>
